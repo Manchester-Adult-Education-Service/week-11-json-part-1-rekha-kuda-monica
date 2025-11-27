@@ -98,16 +98,21 @@ def get_no_blank_input(prompt):
             print("This field cannot be blank!")
         else: 
             return user_input
-while True:
+while choice != "3":
     print("--- BOOK INVENTORY ---")
     print("1. View All Books")
     print("2. Search for Book")
     print("3. Exit")
     choice=input("select an option from 1-3: ")
-if choice == 3:
-    print("Goodbye!")
+    if choice == "1":
+        for i in libray_name:
+            print(f"Title {i["title"]}")
+            print(f"Author {i["author"]}")
+            print(f"Stock {i["stock"]}")
+    if choice == 3:
+        print("Goodbye!")
 else:
-    print("Invalid choice")
+        print("Invalid choice")
 
 # -------------------------------------------
 # CHECKPOINT
