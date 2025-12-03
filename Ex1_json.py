@@ -50,7 +50,9 @@ import json  # We need this tool to read the external file
 #     variable_name = json.load(file)
 #
 # Write your code below:
-
+with open('books.json', 'r') as file:
+    libray_name = json.load(file)
+    print(libray_name)
 
 
 
@@ -88,9 +90,29 @@ import json  # We need this tool to read the external file
 #
 # Write your code below:
 # NOTE: This loop will become the "home" for all your future code!
-
-
-
+choice = ""
+def get_no_blank_input(prompt):
+    while True:
+        user_input = input(prompt)
+        if len(user_input) == 0:
+            print("This field cannot be blank!")
+        else: 
+            return user_input
+while choice != "3":
+    print("--- BOOK INVENTORY ---")
+    print("1. View All Books")
+    print("2. Search for Book")
+    print("3. Exit")
+    choice=input("select an option from 1-3: ")
+    if choice == "1":
+        for i in libray_name:
+            print(f"Title {i["title"]}")
+            print(f"Author {i["author"]}")
+            print(f"Stock {i["stock"]}")
+    if choice == 3:
+        print("Goodbye!")
+else:
+        print("Invalid choice")
 
 # -------------------------------------------
 # CHECKPOINT
